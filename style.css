@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(50deg, #880034, hsl(180, 72%, 61%)) no-repeat;
+}
+.container {
+    width: 100%;
+    max-width: 800px;
+    height: 800px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 2px 2px 35px rgb(0, 0, 0, 0.3) ;
+}
+.form-wrapper {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fieldset-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+/*input*/
+#name, #email {
+    border: none;
+    border-bottom: 1px solid #880034;
+    font-size: 15px;
+    width: 250px;
+    color: #880034;
+    height: 35px;
+    outline:none;
+}
+.data-container {
+     width: 50%;
+     height: 90%;
+     background-color: rgb(136, 0, 152, 0.1);
+     border-radius: 10px;
+     color: black;
+ }
+.paragraph {
+    margin-left: 20px;
+}
+::-webkit-input-placeholder {color:#880034;}
+::-moz-placeholder          {color:#880034;}/* Firefox 19+ */
+:-moz-placeholder           {color:#880034;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#880034;}
+
+/*кнопка*/
+.button {
+    color: #880034;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    margin-top: 50px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.glow-on-hover {
+    width: 120px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #880034;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 50px;
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    border-radius: 50px;
+}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 0.5;
+}
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 50px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
